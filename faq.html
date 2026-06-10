@@ -112,16 +112,23 @@
         .nav-links a:hover::after {
           width: 100%;
         }
+
+        /* HEAD */
+
         
         .page-header {
             padding: 10rem 0 5rem;
-            text-align: center;
+            justify-content: space-between;
         }
 
         .page-header h1 {
             font-size: clamp(3rem, 5vw, 5rem);
             margin-bottom: 1rem;
+            color: var(--espresso);
         }
+
+        /* FAQ */
+
 
         .faq-section {
             padding-bottom: 6rem;
@@ -131,7 +138,7 @@
             margin-bottom: 1rem;
             border-radius: 20px;
             overflow: hidden;
-            background: rgba(255,255,255,0.85);
+            background: var(--bone);
             box-shadow: var(--soft-shadow);
         }
 
@@ -158,7 +165,42 @@
 
         .faq-answer p {
             padding: 0 2rem 2rem;
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: var(--ink);
         }
+
+     /* FOOTER */
+
+        footer {
+          padding: 3rem 0;
+          text-align: center;
+          color: var(--espresso);
+        }
+
+    /* RESPONSIVE */
+
+        @media (max-width: 980px) {
+          .page-header,
+          .faq-item{
+            grid-template-columns: 1fr;
+          }
+    
+          .nav-links {
+            display: none;
+          }
+    
+    
+        }
+    
+        @media (max-width: 640px) {
+          .page-header,
+          .faq-item{
+            font-size: 4rem;
+          }
+
+        }
+        
     </style>
 
     <script>
@@ -211,9 +253,9 @@
 
 <header class="page-header">
     <div class="container">
-        <h2>Frequently Asked Questions</h2>
+        <h1 data-i18n="header_title">Frequently Asked Questions</h1>
 
-        <p>
+        <p data-i18n="header_text">
             Everything you need to know about working with Studio Belvi.
         </p>
     </div>
@@ -223,12 +265,12 @@
     <div class="container">
 
         <div class="faq-item">
-            <button class="faq-question">
+            <button class="faq-question" data-i18n="question01">
                 What services do you offer?
             </button>
 
             <div class="faq-answer">
-                <p>
+                <p data-i18n="answer01">
                     We specialize in immersive celebration design,
                     personalized installations, custom fabrication,
                     interactive experiences, and handcrafted storytelling
@@ -238,12 +280,12 @@
         </div>
 
         <div class="faq-item">
-            <button class="faq-question">
+            <button class="faq-question" data-i18n="question02">
                 How far in advance should we book?
             </button>
 
             <div class="faq-answer">
-                <p>
+                <p data-i18n="answer02">
                     We recommend contacting us 6–12 months before your
                     celebration to ensure availability and sufficient time
                     for creative development.
@@ -252,22 +294,111 @@
         </div>
 
         <div class="faq-item">
-            <button class="faq-question">
+            <button class="faq-question" data-i18n="question03">
                 Do you travel?
             </button>
 
             <div class="faq-answer">
-                <p>
+                <p data-i18n="answer03">
                     Yes. We are available for destination celebrations
                     throughout Spain and internationally.
                 </p>
             </div>
         </div>
-
+        
+        <footer>
+            <div class="container">
+              <p data-i18n="footer_text">Studio Belvi — Crafted for meaningful moments.</p>
+            </div>
+        </footer>
     </div>
 </section>
 
-<script src="assets/js/script.js"></script>
+<script>
+    const translations = {
+      en: {
+        nav01: '',
+        nav02: '',
+        nav03: '',
+        nav04: '',
+        header_title: '',
+        header_text: '',
+        question01: '',
+        answer01: '',
+        question02: '',
+        answer02: '',
+        question03: '',
+        answer03: '',
+        footer_text: ''
+      },
+      es: {
+        nav01: '',
+        nav02: '',
+        nav03: '',
+        nav04: '',
+        header_title: '',
+        header_text: '',
+        question01: '',
+        answer01: '',
+        question02: '',
+        answer02: '',
+        question03: '',
+        answer03: '',
+        footer_text: ''
+      },
+      ca: {
+        nav01: '',
+        nav02: '',
+        nav03: '',
+        nav04: '',
+        header_title: '',
+        header_text: '',
+        question01: '',
+        answer01: '',
+        question02: '',
+        answer02: '',
+        question03: '',
+        answer03: '',
+        footer_text: ''
+      },
+    };
+
+    const languageSwitcher = document.getElementById('language-switcher');
+
+    function updateLanguage(lang) {
+      document.querySelectorAll('[data-i18n]').forEach((element) => {
+        const key = element.getAttribute('data-i18n');
+        if (translations[lang] && translations[lang][key]) {
+          element.innerHTML = translations[lang][key];
+        }
+      });
+
+      localStorage.setItem('studioBelviLanguage', lang);
+    }
+
+    languageSwitcher.addEventListener('change', (e) => {
+      updateLanguage(e.target.value);
+    });
+
+    const savedLanguage = localStorage.getItem('studioBelviLanguage') || 'en';
+    languageSwitcher.value = savedLanguage;
+    updateLanguage(savedLanguage);
+
+    const reveals = document.querySelectorAll('.reveal');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+        }
+      });
+    }, {
+      threshold: 0.15
+    });
+
+    reveals.forEach((el) => observer.observe(el));
+         
+</script>
 
 </body>
 </html>
