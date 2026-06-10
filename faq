@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ | Studio Belvi</title>
+
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+
+<nav>
+    <!-- Same navigation -->
+</nav>
+
+<header class="page-header">
+    <div class="container">
+        <h1>Frequently Asked Questions</h1>
+
+        <p>
+            Everything you need to know about working with Studio Belvi.
+        </p>
+    </div>
+</header>
+
+<section class="faq-section">
+    <div class="container">
+
+        <div class="faq-item">
+            <button class="faq-question">
+                What services do you offer?
+            </button>
+
+            <div class="faq-answer">
+                <p>
+                    We specialize in immersive celebration design,
+                    personalized installations, custom fabrication,
+                    interactive experiences, and handcrafted storytelling
+                    details for weddings and meaningful events.
+                </p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">
+                How far in advance should we book?
+            </button>
+
+            <div class="faq-answer">
+                <p>
+                    We recommend contacting us 6–12 months before your
+                    celebration to ensure availability and sufficient time
+                    for creative development.
+                </p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">
+                Do you travel?
+            </button>
+
+            <div class="faq-answer">
+                <p>
+                    Yes. We are available for destination celebrations
+                    throughout Spain and internationally.
+                </p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<script src="assets/js/script.js"></script>
+
+</body>
+</html>
