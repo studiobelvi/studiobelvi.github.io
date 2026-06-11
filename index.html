@@ -289,7 +289,7 @@
 
     .portfolio-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(1, 1fr);
       gap: 2rem;
     }
 
@@ -298,24 +298,11 @@
         height: 450px;
     }
     
-    .portfolio-item:hover {
-        transform: translateY(-5px);
-    }
-    
-    .portfolio-card-front,
-    .portfolio-card-back {
-    
-        border: 1px solid rgba(255,255,255,0.4);
-    }
-    
     .portfolio-card {
         position: relative;
-    
         width: 100%;
         height: 100%;
-    
         transition: transform 0.8s ease;
-    
         transform-style: preserve-3d;
     }
     
@@ -323,123 +310,23 @@
         transform: rotateY(180deg);
     }
 
-    .portfolio-card-front,
-    .portfolio-card-back {
-    
-        position: absolute;
-    
-        inset: 0;
-    
-        border-radius: 28px;
-    
-        overflow: hidden;
-    
-        backface-visibility: hidden;
-    
-        box-shadow: var(--soft-shadow);
+    .portfolio-item::before {
+      backdrop-filter: blur(1px);
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.55), transparent);
     }
 
-    .portfolio-card-front {
-    
-        background: white;
-    }
-    
-    .portfolio-card-front img {
-    
-        width: 100%;
-        height: 100%;
-    
-        object-fit: cover;
-    }
-    
-    .portfolio-overlay {
-    
-        position: absolute;
-    
-        inset: 0;
-    
-        display: flex;
-        align-items: flex-end;
-    
-        padding: 2rem;
-    
-        background:
-            linear-gradient(
-                to top,
-                rgba(0,0,0,0.55),
-                transparent 50%
-            );
-    
-        color: white;
-    }
-    
-    .portfolio-overlay h3 {
-    
-        font-size: 2rem;
-    
-        margin: 0;
+    .portfolio-content {
+      text-shadow: 0 2px 12px rgba(0,0,0,0.45);
+      position: relative;
+      z-index: 1;
     }
 
-    .portfolio-card-back {
-    
-        transform: rotateY(180deg);
-    
-        background: rgba(255,255,255,0.95);
-    
-        backdrop-filter: blur(16px);
-    
-        padding: 2rem;
-    
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    
-        color: var(--obsidian);
-    }
-    
-    .portfolio-card-back h3 {
-    
-        font-size: 2rem;
-    
-        margin-bottom: 1rem;
-    }
-    
-    .portfolio-card-back p {
-    
-        line-height: 1.7;
-    
-        margin-bottom: 2rem;
-    
-        color: rgba(43,38,36,0.8);
-    }
-
-    .portfolio-button {
-    
-        align-self: flex-start;
-    
-        padding: 0.9rem 1.4rem;
-    
-        border-radius: 999px;
-    
-        background:
-            linear-gradient(
-                135deg,
-                var(--burgundy),
-                var(--bronze)
-            );
-    
-        color: white;
-    
-        text-decoration: none;
-    
-        transition: all 0.3s ease;
-    }
-    
-    .portfolio-button:hover {
-    
-        transform: translateY(-2px);
-    
-        opacity: 0.9;
+    .portfolio-content h3 {
+      font-size: 2.4rem;
+      margin-bottom: 0.5rem;
     }
     
     /* PROCESS */
@@ -556,28 +443,6 @@
         padding: 5rem 0;
       }
     }
-
-    @media (hover: none) {
-    
-        .portfolio-item:hover .portfolio-card {
-            transform: none;
-        }
-        <script>
-              document.querySelectorAll('.portfolio-item')
-                .forEach(card => {
-            
-                    card.addEventListener('click', () => {
-            
-                        card.querySelector('.portfolio-card')
-                            .classList.toggle('flipped');
-                    });
-                });
-        </script>
-        .portfolio-card.flipped {
-            transform: rotateY(180deg);
-        }
-    
-    }
   </style>
 </head>
 <body>
@@ -673,46 +538,47 @@
     <div class="container">
 
       <div class="section-header reveal">
-        <span data-i18n="portfolio_span">Selected Work</span>
-        <h2 data-i18n="portfolio_title">Immersive celebrations with soul.</h2>
-        <p data-i18n="portfolio_text">
+        <span>Selected Work</span>
+        <h2>Immersive celebrations with soul.</h2>
+        <p>
           Every detail is designed intentionally — from handcrafted objects to atmospheric installations and emotionally-driven guest experiences.
         </p>
       </div>
 
       <div class="portfolio-grid">
-
-        <div class="portfolio-card">
-    
-            <div class="portfolio-card-front">
-                <img
-                    src="assets/images/portfolio/mediterranean-ceremony.jpg"
-                    alt="Modern Mediterranean Ceremony">
-    
-                <div class="portfolio-overlay">
-                    <h3>Modern Mediterranean Ceremony</h3>
+        <div class="portfolio-item reveal">
+        
+            <div class="portfolio-card">
+        
+                <div class="portfolio-card-front">
+                    <img
+                        src="assets/images/portfolio/mediterranean-ceremony.jpg"
+                        alt="Modern Mediterranean Ceremony">
+        
+                    <div class="portfolio-overlay">
+                        <h3>Modern Mediterranean Ceremony</h3>
+                    </div>
                 </div>
+        
+                <div class="portfolio-card-back">
+                    <h3>Modern Mediterranean Ceremony</h3>
+        
+                    <p>
+                        Inspired by Mediterranean warmth and sculptural elegance,
+                        this celebration featured custom-built arches, handcrafted
+                        signage, and personalized storytelling details woven
+                        throughout the guest experience.
+                    </p>
+        
+                    <a href="project-mediterranean.html"
+                       class="portfolio-button">
+                       Explore Project
+                    </a>
+                </div>
+        
             </div>
-    
-            <div class="portfolio-card-back">
-                <h3 data-i18n="portfolio01_title">Modern Mediterranean Ceremony</h3>
-    
-                <p data-i18n="portfolio01_text">
-                    Inspired by Mediterranean warmth and sculptural elegance,
-                    this celebration featured custom-built arches, handcrafted
-                    signage, and personalized storytelling details woven
-                    throughout the guest experience.
-                </p>
-    
-                <a href="project-mediterranean.html"
-                   class="portfolio-button"
-                   data-i18n="portfolio01_cta">
-                   Explore Project
-                </a>
-            </div>
-    
+        
         </div>
-
 
       </div>
     </div>
