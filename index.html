@@ -349,6 +349,28 @@
         margin: 0;
     }
 
+    .portfolio-card-back {
+        transform: rotateY(180deg);
+        background: rgba(255,255,255,0.95);
+        backdrop-filter: blur(16px);
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        color: var(--obsidian);
+    }
+    
+    .portfolio-card-back h3 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+    
+    .portfolio-card-back p {
+        line-height: 1.7;
+        margin-bottom: 2rem;
+        color: rgba(43,38,36,0.8);
+    }
+   
     .portfolio-content {
       text-shadow: 0 2px 12px rgba(0,0,0,0.45);
       position: relative;
