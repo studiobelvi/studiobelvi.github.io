@@ -370,7 +370,27 @@
         margin-bottom: 2rem;
         color: rgba(43,38,36,0.8);
     }
-   
+
+    .portfolio-button {
+        align-self: flex-start;
+        padding: 0.9rem 1.4rem;
+        border-radius: 999px;
+        background:
+            linear-gradient(
+                135deg,
+                var(--burgundy),
+                var(--bronze)
+            );
+        color: white;
+        text-decoration: none;
+        transition: all 0.3s ease;
+    }
+    
+    .portfolio-button:hover {
+        transform: translateY(-2px);
+        opacity: 0.9;
+    }   
+
     .portfolio-content {
       text-shadow: 0 2px 12px rgba(0,0,0,0.45);
       position: relative;
