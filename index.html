@@ -309,13 +309,20 @@
     .portfolio-item:hover .portfolio-card {
         transform: rotateY(180deg);
     }
-
-    .portfolio-item::before {
-      backdrop-filter: blur(1px);
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to top, rgba(0,0,0,0.55), transparent);
+    .portfolio-card-front,
+    .portfolio-card-back {
+    
+        position: absolute;
+    
+        inset: 0;
+    
+        border-radius: 28px;
+    
+        overflow: hidden;
+    
+        backface-visibility: hidden;
+    
+        box-shadow: var(--soft-shadow);
     }
 
     .portfolio-content {
