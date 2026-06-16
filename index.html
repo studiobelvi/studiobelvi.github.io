@@ -79,10 +79,22 @@
     }
 
     .logo {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 2rem;
-      letter-spacing: 0.12em;
-      color: var(--bone);
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+    }
+    
+    .logo-image {
+        height: 60px;
+        width: auto;
+        transition:
+            transform 0.3s ease,
+            opacity 0.3s ease;
+    }
+    
+    .logo:hover .logo-image {
+        transform: scale(1.03);
+        opacity: 0.9;
     }
 
     .nav-links {
