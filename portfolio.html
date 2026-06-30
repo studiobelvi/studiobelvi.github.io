@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Studio Belvi - Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link
+      rel="icon"
+      type="image/svg+xml"
+      href="assets/images/logo/favicon.svg"
+  >
+  
+  <style>
+    :root {
+      --paper: #f7f3ee;
+      --bone: #e9dfd2;
+      --ink: #1d1a18;
+      --espresso: #3a2f2a;
+      --bronze: #834C35;
+      --oxblood: #572430;
+      --taupe: #bba4a4;
+      --soft-shadow: 0 18px 50px rgba(45,30,25,0.12);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--paper);
+      color: var(--ink);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: min(1200px, 92%);
+      margin: auto;
+    }
+
+    /* NAV */
+
+    nav {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      background: var(--oxblood);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+    }
+
+    .nav-wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.2rem 0;
+    }
+
+    .logo {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+    }
+    
+    .logo-image {
+        height: 60px;
+        width: auto;
+        transition:
+            transform 0.3s ease,
+            opacity 0.3s ease;
+    }
+    
+    .logo:hover .logo-image {
+        transform: scale(1.03);
+        opacity: 0.9;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--bone);
+    }
+
+    .nav-links a {
+      position: relative;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      width: 0%;
+      height: 1px;
+      background: var(--bone);
+      transition: 0.3s ease;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding-top: 6rem;
+      position: relative;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .hero-text small {
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: var(--espresso);
+      font-size: 0.8rem;
+    }
+
+    .hero-text h1 {
+      font-size: clamp(4rem, 8vw, 7rem);
+      line-height: 0.95;
+      color: var(--ink);
+      margin: 1rem 0 2rem;
+    }
+
+    .hero-text p {
+      max-width: 520px;
+      font-size: 1.1rem;
+      color: var(--ink);
+      margin-bottom: 2rem;
+    }
+
+    /* SECTIONS */
+
+    section {
+      padding: 7rem 0;
+    }
+
+    .section-header {
+      max-width: 760px;
+      margin-bottom: 4rem;
+    }
+
+    .section-header span {
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--espresso);
+      font-size: 0.8rem;
+    }
+
+    .section-header h2 {
+      font-size: clamp(2.8rem, 5vw, 4.8rem);
+      line-height: 1;
+      margin: 1rem 0;
+    }
+
+    .section-header p {
+      color: var(--ink);
+      font-size: 1.05rem;
+    }
+
+    /* PORTFOLIO */
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      gap: 2rem;
+    }
+
+    .portfolio-item {
+        perspective: 1500px;
+        height: 450px;
+    }
+    
+    .portfolio-card {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        transition: transform 0.8s ease;
+        transform-style: preserve-3d;
+    }
+    
+    .portfolio-item:hover .portfolio-card {
+        transform: rotateY(180deg);
+    }
+    .portfolio-card-front,
+    .portfolio-card-back {
+        position: absolute;
+        inset: 0;
+        border-radius: 28px;
+        overflow: hidden;
+        backface-visibility: hidden;
+        box-shadow: var(--soft-shadow);
+    }
+
+    .portfolio-card-front {
+        background: white;
+    }
+    
+    .portfolio-card-front img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    
+    .portfolio-overlay {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: flex-end;
+        padding: 2rem;
+        background:
+            linear-gradient(
+                to top,
+                rgba(0,0,0,0.55),
+                transparent 50%
+            );
+        color: white;
+    }
+    
+    .portfolio-overlay h3 {
+        font-size: 2rem;
+        margin: 0;
+    }
+
+    .portfolio-card-back {
+        transform: rotateY(180deg);
+        background: rgba(255,255,255,0.95);
+        backdrop-filter: blur(16px);
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        color: var(--obsidian);
+    }
+    
+    .portfolio-card-back h3 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+    
+    .portfolio-card-back p {
+        line-height: 1.7;
+        margin-bottom: 2rem;
+        color: rgba(43,38,36,0.8);
+    }
+
+    .portfolio-button {
+        align-self: flex-start;
+        padding: 0.9rem 1.4rem;
+        border-radius: 999px;
+        background:
+            linear-gradient(
+                135deg,
+                var(--burgundy),
+                var(--bronze)
+            );
+        color: white;
+        text-decoration: none;
+        transition: all 0.3s ease;
+    }
+    
+    .portfolio-button:hover {
+        transform: translateY(-2px);
+        opacity: 0.9;
+    }   
+
+    .portfolio-content {
+      text-shadow: 0 2px 12px rgba(0,0,0,0.45);
+      position: relative;
+      z-index: 1;
+    }
+
+    .portfolio-content h3 {
+      font-size: 2.4rem;
+      margin-bottom: 0.5rem;
+    } 
+
+    /* FOOTER */
+
+    footer {
+      padding: 3rem 0;
+      text-align: center;
+      color: var(--espresso);
+    }
+
+    /* REVEAL ANIMATION */
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 1s ease;
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .services-grid,
+      .portfolio-grid,
+      .process-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding: 8rem 0 4rem;
+      }
+
+      .hero-visual {
+        height: 500px;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .process {
+        padding: 2rem;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .hero-text h1 {
+        font-size: 4rem;
+      }
+
+      .shape-3 {
+        width: 60%;
+      }
+
+      section {
+        padding: 5rem 0;
+      }
+    }
+
+    @media (max-width: 768px) {
+        .logo-image {
+            height: 42px;
+        }
+    }
+  </style>
+</head>
+      
+<header class="page-header">
+
+    <div class="container">
+
+        <h1>Portfolio</h1>
+
+        <p>
+            Immersive celebrations crafted through
+            storytelling, atmosphere, and artistry.
+        </p>
+
+    </div>
+
+</header>
+
+<body>
+
+  <nav>
+    <div class="container nav-wrapper">
+      <a href="index.html" class="logo">
+        <img
+          src="assets/images/logo/logo-bone-textoderecha.svg"
+          alt="Studio Belvi"
+          class="logo-image"
+        >
+      </a>
+
+      <div style="display:flex; align-items:center; gap:2rem;">
+        <div class="nav-links">
+        <a href="index.html/services" data-i18n="nav01">Services</a>
+        <a href="index.html/portfolio" data-i18n="nav02">Portfolio</a>
+        <a href="index.html/process" data-i18n="nav03">Process</a>
+        <a href="index.html/contact" data-i18n="nav04">Contact</a>
+        <a href="faq.html" data-i18n="nav05">FAQ</a>
+      </div>
+
+        <select id="language-switcher" style="padding:0.7rem 1rem; border-radius:999px; border:1px solid rgba(0,0,0,0.08); background:var(--bone); font-family:'Inter', sans-serif; cursor:pointer;">
+          <option value="en">EN</option>
+          <option value="es">ES</option>
+          <option value="ca">CA</option>
+        </select>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="container hero-grid">
+
+      <div class="hero-text reveal">
+        <h1 data-i18n="hero_title">Portfolio</h1>
+        <p data-i18n="hero_text">
+          Studio Belvi creates emotionally-driven celebrations through handcrafted storytelling, spatial design, custom fabrication, and immersive personalized details.
+        </p>
+      </div>
+    </div>
+  </header>
+      
+  <section id="portfolio">
+    <div class="container">
+      <div class="portfolio-grid">
+        <div class="portfolio-item reveal">
+        
+            <div class="portfolio-card">
+        
+                <div class="portfolio-card-front">
+                    <img
+                        src="./assets/images/portfolio/mediterranean-ceremony.jpg"
+                        alt="Modern Mediterranean Ceremony">
+        
+                    <div class="portfolio-overlay">
+                        <h3>Modern Mediterranean Ceremony</h3>
+                    </div>
+                </div>
+        
+                <div class="portfolio-card-back">
+                    <h3>Modern Mediterranean Ceremony</h3>
+        
+                    <p>
+                        Inspired by Mediterranean warmth and sculptural elegance,
+                        this celebration featured custom-built arches, handcrafted
+                        signage, and personalized storytelling details woven
+                        throughout the guest experience.
+                    </p>
+        
+                    <a href="project-mediterranean.html"
+                       class="portfolio-button">
+                       Explore Project
+                    </a>
+                </div>
+        
+            </div>
+        
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p data-i18n="footer_text">Studio Belvi — Crafted for meaningful moments.</p>
+    </div>
+  </footer>
+
+  <script>
+    const translations = {
+      en: {
+        nav01: 'Services',
+        nav02: 'Portfolio',
+        nav03: 'Process',
+        nav04: 'Contact',
+        hero_small: 'Immersive Celebration Design',
+        hero_title: 'Stories made tangible.',
+        hero_text: 'Studio Belvi creates emotionally-driven celebrations through handcrafted storytelling, spatial design, custom fabrication, and immersive personalized details.',
+        hero_cta: 'Start Your Story',
+        hero_secondary_cta: 'Explore Our Work',
+        services_span: 'Services',
+        services_title: 'Designed around your story.',
+        services_text: 'We create immersive and emotionally meaningful experiences through handcrafted details, spatial storytelling, and personalized design.',
+        services_card01_title: 'Story Objects',
+        services_card01_text: 'Invitation suites, keepsakes, personalized gifts, jewelry, and symbolic artifacts crafted to hold memory and meaning.',
+        services_card02_title: 'Spatial Narratives',
+        services_card02_text: 'Sculptural installations, ceremony environments, signage systems, and immersive visual details that transform spaces into experiences.',
+        services_card03_title: 'Interactive Moments',
+        services_card03_text: 'Personalized guest experiences, narrative elements, hidden symbolism, and interactive storytelling designed to create unforgettable memories.',
+        portfolio_span: 'Selected work',
+        portfolio_title: 'Immersive celebrations with soul.',
+        portfolio_text: 'Every detail is designed intentionally — from handcrafted objects to atmospheric installations and emotionally-driven guest experiences.',
+        portfolio01_title: 'Modern Mediterranean Ceremony',
+        portfolio01_text: 'Warm textures, sculptural arches, and intimate storytelling.',
+        portfolio01_cta: 'Explore Project',
+        process_span: 'Our Process',
+        process_title: 'Crafted with intention.',
+        process_card01_title: 'Discover',
+        process_card01_text: 'We learn your story, aesthetic, memories, and emotional vision.',
+        process_card02_title: 'Concept',
+        process_card02_text: 'We design immersive visual concepts and narrative-driven experiences.',
+        process_card03_title: 'Create',
+        process_card03_text: 'Through fabrication, design, lighting, and craftsmanship, ideas become tangible.',
+        process_card04_title: 'Experience',
+        process_card04_text: 'Your guests step into a celebration designed with emotion and meaning.',
+        contact_title: 'Let’s create something unforgettable.',
+        contact_text: 'Studio Belvi designs personalized celebrations through atmosphere, storytelling, and handcrafted artistry.',
+        contact_cta: 'Begin Your Project',
+        footer_text: 'Studio Belvi — Crafted for meaningful moments.'
+      },
+      es: {
+        nav01: 'Servicios',
+        nav02: 'Porfolio',
+        nav03: 'Proceso',
+        nav04: 'Contacto',
+        hero_small: 'DISEÑO INMERSIVO DE CELEBRACIONES',
+        hero_title: 'Tu historia. Tu evento. Tu estudio creativo.',
+        hero_text: 'En <b>studio BELVI</b> somos especialistas en narrativa. Nuestro leitmotiv son las historias personales y queremos ayudarte a que cuentes la tuya en un solo día, posiblemente el día más importante de tu vida.',
+        hero_cta: 'Empieza tu aventura',
+        hero_secondary_cta: 'Conoce nuestro trabajo',
+        services_span: 'Servicios',
+        services_title: 'Tu personalidad como protagonista.',
+        services_text: 'Damos siempre máxima importancia al <b>carácter</b>, la <b>originalidad</b>, la <b>belleza</b> y la <b>emoción</b>.<br>Para unir estos elementos en una sola historia y convertirla en algo tangible, hemos diseñado tres paisajes sobre los que construiremos a tu gusto…',
+        services_card01_title: 'memorabilia',
+        services_card01_text: '<i>Corsages</i> y <i>boutoniers</i> personalizados, invitaciones que permanecen en el recuerdo, detalles exclusivos para tus invitados y toda clase de elementos simbólicos que quedarán para la posteridad.',
+        services_card02_title: 'escenografía',
+        services_card02_text: 'Ideación y fabricación de todo aquello que unifica los espacios en una sola temática y refleja tu verdadera esencia: arcos ceremoniales, <i>stands</i> creativos, decoración de mesas…',
+        services_card03_title: 'inmersión',
+        services_card03_text: 'Un último paisaje para que tus invitados se sumerjan contigo en la historia de tu vida: diseño de juegos, exhibiciones interactivas, bingos musicales, exposiciones audiovisuales…',
+        portfolio_span: 'VUESTRAS HISTORIAS',
+        portfolio_title: 'Cada una de vuestras historias alimenta el alma de Studio Belvi.',
+        portfolio_text: 'Aquí te dejamos un porfolio que crece con nosotros. Cada celebración nos hace mejor narradores y nos acerca más a ti, a tu historia y a tu visión del mundo.',
+        portfolio01_title: 'Cuento de hadas',
+        portfolio01_text: 'Espacios bucólicos, arcos de fantasía y una novia que parece sacada de un cuento',
+        portfolio01_cta: '',
+        process_span: 'NUESTRO PROCESO',
+        process_title: 'Narramos con intención',
+        process_card01_title: 'descubrimiento',
+        process_card01_text: 'Nos cuentas tu historia, tus gustos, tus recuerdos, lo que te emociona y lo que te enamora.',
+        process_card02_title: 'concepto',
+        process_card02_text: 'Ideamos el concepto narrativo y los tres paisajes que componen tu historia.',
+        process_card03_title: 'creación',
+        process_card03_text: 'Ponemos en práctica las ideas mediante diseño, fabricación y artesanía. Hacemos tangible lo intangible.',
+        process_card04_title: 'experiencia',
+        process_card04_text: 'Tú y tus invitados os sumergís en una historia llena de emoción y significado.',
+        contact_title: 'Inventemos juntos una fiesta inolvidable',
+        contact_text: 'Studio Belvi es el narrador, diseñador y artesano que tu evento merece.',
+        contact_cta: '¿Empezamos?',
+        footer_text: 'studio BELVI — Creamos momentos memorables'
+      },
+      ca: {
+        nav01: '',
+        nav02: '',
+        nav03: '',
+        nav04: '',
+        hero_small: 'Disseny Immersiu per a Celebracions',
+        hero_title: 'Històries fetes tangibles.',
+        hero_text: 'Studio Belvi crea celebracions emocionals mitjançant narrativa artesanal, disseny espacial, fabricació personalitzada i detalls immersius.',
+        hero_cta: 'Comença la Teva Història',
+        hero_secondary_cta: 'Explora el Nostre Treball',
+        services_span: 'Serveis',
+        services_title: '',
+        services_text: '',
+        services_card01_title: '',
+        services_card01_text: '',
+        services_card02_title: '',
+        services_card02_text: '',
+        services_card03_title: '',
+        services_card03_text: '',
+        portfolio_span: '',
+        portfolio_title: '',
+        portfolio_text: '',
+        portfolio01_title: '',
+        portfolio01_text: '',
+        portfolio01_cta: '',
+        portfolio_card02_text: '',
+        process_span: '',
+        process_title: '',
+        process_card01_title: '',
+        process_card01_text: '',
+        process_card02_title: '',
+        process_card02_text: '',
+        process_card03_title: '',
+        process_card03_text: '',
+        process_card04_title: '',
+        process_card04_text: '',
+        contact_title: '',
+        contact_text: '',
+        contact_cta: '',
+        footer_text: ''
+      }
+    };
+
+    const languageSwitcher = document.getElementById('language-switcher');
+
+    function updateLanguage(lang) {
+      document.querySelectorAll('[data-i18n]').forEach((element) => {
+        const key = element.getAttribute('data-i18n');
+        if (translations[lang] && translations[lang][key]) {
+          element.innerHTML = translations[lang][key];
+        }
+      });
+
+      localStorage.setItem('studioBelviLanguage', lang);
+    }
+
+    languageSwitcher.addEventListener('change', (e) => {
+      updateLanguage(e.target.value);
+    });
+
+    const savedLanguage = localStorage.getItem('studioBelviLanguage') || 'en';
+    languageSwitcher.value = savedLanguage;
+    updateLanguage(savedLanguage);
+
+    const reveals = document.querySelectorAll('.reveal');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+        }
+      });
+    }, {
+      threshold: 0.15
+    });
+
+    reveals.forEach((el) => observer.observe(el));
+  </script>
+
+</body>
+</html>
+    
