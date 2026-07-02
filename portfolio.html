@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Studio Belvi - Portfolio</title>
+  <title>Studio Belvi - Fairytale wedding</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -130,43 +130,6 @@
       width: 100%;
     }
 
-    /* HERO */
-
-    .hero {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      padding-top: 6rem;
-      position: relative;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.1fr 1fr;
-      gap: 4rem;
-      align-items: center;
-    }
-
-    .hero-text small {
-      text-transform: uppercase;
-      letter-spacing: 0.2em;
-      color: var(--espresso);
-      font-size: 0.8rem;
-    }
-
-    .hero-text h1 {
-      font-size: clamp(4rem, 8vw, 7rem);
-      line-height: 0.95;
-      color: var(--ink);
-      margin: 1rem 0 2rem;
-    }
-
-    .hero-text p {
-      max-width: 520px;
-      font-size: 1.1rem;
-      color: var(--ink);
-      margin-bottom: 2rem;
-    }
 
     /* SECTIONS */
 
@@ -201,7 +164,7 @@
 
     .portfolio-grid {
       display: grid;
-      grid-template-columns: repeat(1, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 2rem;
     }
 
@@ -383,21 +346,6 @@
     }
   </style>
 </head>
-      
-<header class="page-header">
-
-    <div class="container">
-
-        <h1>Portfolio</h1>
-
-        <p>
-            Immersive celebrations crafted through
-            storytelling, atmosphere, and artistry.
-        </p>
-
-    </div>
-
-</header>
 
 <body>
 
@@ -411,38 +359,26 @@
         >
       </a>
 
-      <div style="display:flex; align-items:center; gap:2rem;">
-        <div class="nav-links">
-        <a href="index.html/services" data-i18n="nav01">Services</a>
-        <a href="index.html/portfolio" data-i18n="nav02">Portfolio</a>
-        <a href="index.html/process" data-i18n="nav03">Process</a>
-        <a href="index.html/contact" data-i18n="nav04">Contact</a>
-        <a href="faq.html" data-i18n="nav05">FAQ</a>
-      </div>
 
         <select id="language-switcher" style="padding:0.7rem 1rem; border-radius:999px; border:1px solid rgba(0,0,0,0.08); background:var(--bone); font-family:'Inter', sans-serif; cursor:pointer;">
           <option value="en">EN</option>
           <option value="es">ES</option>
           <option value="ca">CA</option>
         </select>
-      </div>
+
     </div>
   </nav>
 
-  <header class="hero">
-    <div class="container hero-grid">
-
-      <div class="hero-text reveal">
-        <h1 data-i18n="hero_title">Portfolio</h1>
-        <p data-i18n="hero_text">
+  <section id="portfolio">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2 data-i18n="header_title">Portfolio</h2>
+        <p data-i18n="header_text">
           Studio Belvi creates emotionally-driven celebrations through handcrafted storytelling, spatial design, custom fabrication, and immersive personalized details.
         </p>
       </div>
-    </div>
-  </header>
       
-  <section id="portfolio">
-    <div class="container">
+      
       <div class="portfolio-grid">
         <div class="portfolio-item reveal">
         
