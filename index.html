@@ -445,6 +445,40 @@
       letter-spacing: 0.12em;
     }
 
+    /* COLLAB */
+
+    .collab-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+
+    .collab-card {
+      background: var(--bone);
+      border: 1px solid rgba(0,0,0,0.05);
+      border-radius: 28px;
+      padding: 2.5rem;
+      transition: 0.35s ease;
+      backdrop-filter: blur(8px);
+    }
+
+    .collab-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--soft-shadow);
+    }
+
+    .collab-number {
+      font-size: 0.9rem;
+      color: var(--espresso);
+      margin-bottom: 1.2rem;
+      letter-spacing: 0.1em;
+    }
+
+    .collab-card h3 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
     /* CTA */
 
     .cta {
@@ -728,6 +762,47 @@
     </div>
   </section>
 
+  <section id="collab">
+    <div class="container">
+
+      <div class="collab-header reveal">
+        <span data-i18n="collab_span">Collaboration options</span>
+        <h2 data-i18n="collab_title">Let your story show.</h2>
+        <p data-i18n="collab_text">
+          Either a small intervention or the whole wedding, we want to give voice to your story.
+        </p>
+      </div>
+
+      <div class="collab-grid">
+
+        <div class="collab-card reveal">
+          <div class="collab-number">01</div>
+          <h3 data-i18n="collab_card01_title">Story Sparks</h3>
+          <p data-i18n="collab_card01_text">
+            This option is for couples who want to add small but meaningfull sparks to an already designed celebration.
+          </p>
+        </div>
+
+        <div class="collab-card reveal">
+          <div class="collab-number">02</div>
+          <h3 data-i18n="collab_card02_title">Story Chapters</h3>
+          <p data-i18n="collab_card02_text">
+            If your celebration is mostly planned but you want to add a narrative and interactive layer throughout, this is for you.
+          </p>
+        </div>
+
+        <div class="collab-card reveal">
+          <div class="collab-number">03</div>
+          <h3 data-i18n="collab_card03_title">Story Universe</h3>
+          <p data-i18n="collab_card03_text">
+            Your idea of a wedding is an entire world designed around your story, where every object, space and interaction has your personal touch.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  
   <section id="cta">
     <div class="container">
       <div class="cta reveal" id="contact">
