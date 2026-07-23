@@ -268,40 +268,6 @@
       font-size: 1.05rem;
     }
 
-    /* SERVICES */
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2rem;
-    }
-
-    .service-card {
-      background: var(--bone);
-      border: 1px solid rgba(0,0,0,0.05);
-      border-radius: 28px;
-      padding: 2.5rem;
-      transition: 0.35s ease;
-      backdrop-filter: blur(8px);
-    }
-
-    .service-card:hover {
-      transform: translateY(-8px);
-      box-shadow: var(--soft-shadow);
-    }
-
-    .service-number {
-      font-size: 0.9rem;
-      color: var(--espresso);
-      margin-bottom: 1.2rem;
-      letter-spacing: 0.1em;
-    }
-
-    .service-card h3 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-    }
-
     /* PORTFOLIO */
 
     .portfolio-grid {
@@ -418,6 +384,41 @@
       font-size: 2.4rem;
       margin-bottom: 0.5rem;
     }
+
+    /* SERVICES */
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+
+    .service-card {
+      background: var(--bone);
+      border: 1px solid rgba(0,0,0,0.05);
+      border-radius: 28px;
+      padding: 2.5rem;
+      transition: 0.35s ease;
+      backdrop-filter: blur(8px);
+    }
+
+    .service-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--soft-shadow);
+    }
+
+    .service-number {
+      font-size: 0.9rem;
+      color: var(--espresso);
+      margin-bottom: 1.2rem;
+      letter-spacing: 0.1em;
+    }
+
+    .service-card h3 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
     
     /* PROCESS */
 
@@ -595,47 +596,6 @@
     </div>
   </header>
 
-  <section id="services">
-    <div class="container">
-
-      <div class="section-header reveal">
-        <span data-i18n="services_span">Services</span>
-        <h2 data-i18n="services_title">Designed around your story.</h2>
-        <p data-i18n="services_text">
-          We create immersive and emotionally meaningful experiences through handcrafted details, spatial storytelling, and personalized design.
-        </p>
-      </div>
-
-      <div class="services-grid">
-
-        <div class="service-card reveal">
-          <div class="service-number">01</div>
-          <h3 data-i18n="services_card01_title">Story Objects</h3>
-          <p data-i18n="services_card01_text">
-            Invitation suites, keepsakes, personalized gifts, jewelry, and symbolic artifacts crafted to hold memory and meaning.
-          </p>
-        </div>
-
-        <div class="service-card reveal">
-          <div class="service-number">02</div>
-          <h3 data-i18n="services_card02_title">Spatial Narratives</h3>
-          <p data-i18n="services_card02_text">
-            Sculptural installations, ceremony environments, signage systems, and immersive visual details that transform spaces into experiences.
-          </p>
-        </div>
-
-        <div class="service-card reveal">
-          <div class="service-number">03</div>
-          <h3 data-i18n="services_card03_title">Interactive Moments</h3>
-          <p data-i18n="services_card03_text">
-            Personalized guest experiences, narrative elements, hidden symbolism, and interactive storytelling designed to create unforgettable memories.
-          </p>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
   <section id="portfolio">
     <div class="container">
 
@@ -686,6 +646,47 @@
     </div>
   </section>
 
+  <section id="services">
+    <div class="container">
+
+      <div class="section-header reveal">
+        <span data-i18n="services_span">Services</span>
+        <h2 data-i18n="services_title">Designed around your story.</h2>
+        <p data-i18n="services_text">
+          We create immersive and emotionally meaningful experiences through handcrafted details, spatial storytelling, and personalized design.
+        </p>
+      </div>
+
+      <div class="services-grid">
+
+        <div class="service-card reveal">
+          <div class="service-number">01</div>
+          <h3 data-i18n="services_card01_title">Story Objects</h3>
+          <p data-i18n="services_card01_text">
+            Invitation suites, keepsakes, personalized gifts, jewelry, and symbolic artifacts crafted to hold memory and meaning.
+          </p>
+        </div>
+
+        <div class="service-card reveal">
+          <div class="service-number">02</div>
+          <h3 data-i18n="services_card02_title">Spatial Narratives</h3>
+          <p data-i18n="services_card02_text">
+            Sculptural installations, ceremony environments, signage systems, and immersive visual details that transform spaces into experiences.
+          </p>
+        </div>
+
+        <div class="service-card reveal">
+          <div class="service-number">03</div>
+          <h3 data-i18n="services_card03_title">Interactive Moments</h3>
+          <p data-i18n="services_card03_text">
+            Personalized guest experiences, narrative elements, hidden symbolism, and interactive storytelling designed to create unforgettable memories.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  
   <section id="process">
     <div class="container">
 
@@ -727,7 +728,7 @@
     </div>
   </section>
 
-  <section>
+  <section id="cta">
     <div class="container">
       <div class="cta reveal" id="contact">
         <h2 data-i18n="contact_title">Let’s create something unforgettable.</h2>
@@ -735,7 +736,7 @@
           Studio Belvi designs personalized celebrations through atmosphere, storytelling, and handcrafted artistry.
         </p>
 
-        <a href="mailto:studiobelvi@gmail.com" class="btn btn-primary" data-i18n="contact_cta">
+        <a href="mailto:hello@studiobelvi.com" class="btn btn-primary" data-i18n="contact_cta">
           Begin Your Project
         </a>
       </div>
