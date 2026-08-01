@@ -303,7 +303,7 @@
     }
 
     .portfolio-card-front {
-        background: white;
+        background: var(--paper);
     }
     
     .portfolio-card-front img {
@@ -324,7 +324,7 @@
                 rgba(0,0,0,0.55),
                 transparent 50%
             );
-        color: white;
+        color: var(--paper);
     }
     
     .portfolio-overlay h3 {
@@ -334,13 +334,13 @@
 
     .portfolio-card-back {
         transform: rotateY(180deg);
-        background: rgba(255,255,255,0.95);
+        background: var(--paper);
         backdrop-filter: blur(16px);
         padding: 2rem;
         display: flex;
         flex-direction: column;
         justify-content: center;
-        color: var(--obsidian);
+        color: var(--ink);
     }
     
     .portfolio-card-back h3 {
@@ -351,19 +351,14 @@
     .portfolio-card-back p {
         line-height: 1.7;
         margin-bottom: 2rem;
-        color: rgba(43,38,36,0.8);
+        color: var(--ink);
     }
 
     .portfolio-button {
         align-self: flex-start;
         padding: 0.9rem 1.4rem;
         border-radius: 999px;
-        background:
-            linear-gradient(
-                135deg,
-                var(--burgundy),
-                var(--bronze)
-            );
+        background: var(--oxblood);
         color: var(--paper);
         text-decoration: none;
         transition: all 0.3s ease;
@@ -419,11 +414,45 @@
       margin-bottom: 1rem;
     }
 
+    /* COLLAB */
+
+    .collab-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+
+    .collab-card {
+      background: var(--taupe);
+      border: 1px solid rgba(0,0,0,0.05);
+      border-radius: 28px;
+      padding: 2.5rem;
+      transition: 0.35s ease;
+      backdrop-filter: blur(8px);
+    }
+
+    .collab-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--soft-shadow);
+    }
+
+    .collab-number {
+      font-size: 0.9rem;
+      color: var(--oxblood);
+      margin-bottom: 1.2rem;
+      letter-spacing: 0.1em;
+    }
+
+    .collab-card h3 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    
     
     /* PROCESS */
 
     .process {
-      background: var(--taupe);
+      background: var(--bone);
       border-radius: 40px;
       padding: 4rem;
     }
@@ -445,39 +474,6 @@
       letter-spacing: 0.12em;
     }
 
-    /* COLLAB */
-
-    .collab-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2rem;
-    }
-
-    .collab-card {
-      background: var(--bone);
-      border: 1px solid rgba(0,0,0,0.05);
-      border-radius: 28px;
-      padding: 2.5rem;
-      transition: 0.35s ease;
-      backdrop-filter: blur(8px);
-    }
-
-    .collab-card:hover {
-      transform: translateY(-8px);
-      box-shadow: var(--soft-shadow);
-    }
-
-    .collab-number {
-      font-size: 0.9rem;
-      color: var(--espresso);
-      margin-bottom: 1.2rem;
-      letter-spacing: 0.1em;
-    }
-
-    .collab-card h3 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-    }
 
     /* CTA */
 
@@ -577,6 +573,8 @@
     }
   </style>
 </head>
+
+  
 <body id="top">
 
   <nav>
@@ -635,9 +633,9 @@
     <div class="container">
 
       <div class="section-header reveal">
-        <span>Selected Work</span>
-        <h2>Immersive celebrations with soul.</h2>
-        <p>
+        <span data-i18n="portfolio_span">Selected Work</span>
+        <h2 data-i18n="portfolio_title">Immersive celebrations with soul.</h2>
+        <p data-i18n="portfolio_text">
           Every detail is designed intentionally — from handcrafted objects to atmospheric installations and emotionally-driven guest experiences.
         </p>
       </div>
@@ -653,19 +651,19 @@
                         alt="Once upon a story">
         
                     <div class="portfolio-overlay">
-                        <h3>Once upon a story</h3>
+                        <h3 data-i18n="portfolio_card01_front">Once upon a story</h3>
                     </div>
                 </div>
         
                 <div class="portfolio-card-back">
-                    <h3>Once upon a story</h3>
+                    <h3 data-i18n="portfolio_card01_back_title">Once upon a story</h3>
         
-                    <p>
+                    <p data-i18n="portfolio_card01_back_text">
                         Inspired by the couples' love for books and fantasy, this wedding was designed to feel like stepping into a fairytale
                     </p>
         
                     <a href="portfolio.html"
-                       class="portfolio-button">
+                       class="portfolio-button" data-i18n="portfolio_card01_back_btn">
                        Explore Project
                     </a>
                 </div>
@@ -724,6 +722,48 @@
       </div>
     </div>
   </section>
+
+  <section id="collab">
+    <div class="container">
+
+      <div class="section-header reveal">
+        <span data-i18n="collab_span">Collaboration options</span>
+        <h2 data-i18n="collab_title">Let your story show.</h2>
+        <p data-i18n="collab_text">
+          Either a small intervention or the whole wedding, we want to give voice to your story.
+        </p>
+      </div>
+
+      <div class="collab-grid">
+
+        <div class="collab-card reveal">
+          <div class="collab-number">01</div>
+          <h3 data-i18n="collab_card01_title">Story Sparks</h3>
+          <p data-i18n="collab_card01_text">
+            This option is for couples who want to add small but meaningfull sparks to an already designed celebration.
+          </p>
+        </div>
+
+        <div class="collab-card reveal">
+          <div class="collab-number">02</div>
+          <h3 data-i18n="collab_card02_title">Story Chapters</h3>
+          <p data-i18n="collab_card02_text">
+            If your celebration is mostly planned but you want to add a narrative and interactive layer throughout, this is for you.
+          </p>
+        </div>
+
+        <div class="collab-card reveal">
+          <div class="collab-number">03</div>
+          <h3 data-i18n="collab_card03_title">Story Universe</h3>
+          <p data-i18n="collab_card03_text">
+            Your idea of a wedding is an entire world designed around your story, where every object, space and interaction has your personal touch.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
   
   <section id="process">
     <div class="container">
@@ -766,46 +806,6 @@
     </div>
   </section>
 
-  <section id="collab">
-    <div class="container">
-
-      <div class="section-header reveal">
-        <span data-i18n="collab_span">Collaboration options</span>
-        <h2 data-i18n="collab_title">Let your story show.</h2>
-        <p data-i18n="collab_text">
-          Either a small intervention or the whole wedding, we want to give voice to your story.
-        </p>
-      </div>
-
-      <div class="collab-grid">
-
-        <div class="collab-card reveal">
-          <div class="collab-number">01</div>
-          <h3 data-i18n="collab_card01_title">Story Sparks</h3>
-          <p data-i18n="collab_card01_text">
-            This option is for couples who want to add small but meaningfull sparks to an already designed celebration.
-          </p>
-        </div>
-
-        <div class="collab-card reveal">
-          <div class="collab-number">02</div>
-          <h3 data-i18n="collab_card02_title">Story Chapters</h3>
-          <p data-i18n="collab_card02_text">
-            If your celebration is mostly planned but you want to add a narrative and interactive layer throughout, this is for you.
-          </p>
-        </div>
-
-        <div class="collab-card reveal">
-          <div class="collab-number">03</div>
-          <h3 data-i18n="collab_card03_title">Story Universe</h3>
-          <p data-i18n="collab_card03_text">
-            Your idea of a wedding is an entire world designed around your story, where every object, space and interaction has your personal touch.
-          </p>
-        </div>
-
-      </div>
-    </div>
-  </section>
   
   <section id="cta">
     <div class="container">
