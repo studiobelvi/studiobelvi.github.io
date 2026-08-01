@@ -130,43 +130,6 @@
       width: 100%;
     }
 
-    /* HERO */
-
-    .hero {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      padding-top: 6rem;
-      position: relative;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.1fr 1fr;
-      gap: 4rem;
-      align-items: center;
-    }
-
-    .hero-text small {
-      text-transform: uppercase;
-      letter-spacing: 0.2em;
-      color: var(--espresso);
-      font-size: 0.8rem;
-    }
-
-    .hero-text h1 {
-      font-size: clamp(4rem, 8vw, 7rem);
-      line-height: 0.95;
-      color: var(--ink);
-      margin: 1rem 0 2rem;
-    }
-
-    .hero-text p {
-      max-width: 520px;
-      font-size: 1.1rem;
-      color: var(--ink);
-      margin-bottom: 2rem;
-    }
 
     /* SECTIONS */
 
@@ -196,123 +159,6 @@
       color: var(--ink);
       font-size: 1.05rem;
     }
-
-    /* PORTFOLIO */
-
-    .portfolio-grid {
-      display: grid;
-      grid-template-columns: repeat(1, 1fr);
-      gap: 2rem;
-    }
-
-    .portfolio-item {
-        perspective: 1500px;
-        height: 450px;
-    }
-    
-    .portfolio-card {
-        position: relative;
-        width: 100%;
-        height: 100%;
-        transition: transform 0.8s ease;
-        transform-style: preserve-3d;
-    }
-    
-    .portfolio-item:hover .portfolio-card {
-        transform: rotateY(180deg);
-    }
-    .portfolio-card-front,
-    .portfolio-card-back {
-        position: absolute;
-        inset: 0;
-        border-radius: 28px;
-        overflow: hidden;
-        backface-visibility: hidden;
-        box-shadow: var(--soft-shadow);
-    }
-
-    .portfolio-card-front {
-        background: white;
-    }
-    
-    .portfolio-card-front img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-    
-    .portfolio-overlay {
-        position: absolute;
-        inset: 0;
-        display: flex;
-        align-items: flex-end;
-        padding: 2rem;
-        background:
-            linear-gradient(
-                to top,
-                rgba(0,0,0,0.55),
-                transparent 50%
-            );
-        color: white;
-    }
-    
-    .portfolio-overlay h3 {
-        font-size: 2rem;
-        margin: 0;
-    }
-
-    .portfolio-card-back {
-        transform: rotateY(180deg);
-        background: rgba(255,255,255,0.95);
-        backdrop-filter: blur(16px);
-        padding: 2rem;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        color: var(--obsidian);
-    }
-    
-    .portfolio-card-back h3 {
-        font-size: 2rem;
-        margin-bottom: 1rem;
-    }
-    
-    .portfolio-card-back p {
-        line-height: 1.7;
-        margin-bottom: 2rem;
-        color: rgba(43,38,36,0.8);
-    }
-
-    .portfolio-button {
-        align-self: flex-start;
-        padding: 0.9rem 1.4rem;
-        border-radius: 999px;
-        background:
-            linear-gradient(
-                135deg,
-                var(--burgundy),
-                var(--bronze)
-            );
-        color: white;
-        text-decoration: none;
-        transition: all 0.3s ease;
-    }
-    
-    .portfolio-button:hover {
-        transform: translateY(-2px);
-        opacity: 0.9;
-    }   
-
-    .portfolio-content {
-      text-shadow: 0 2px 12px rgba(0,0,0,0.45);
-      position: relative;
-      z-index: 1;
-    }
-
-    .portfolio-content h3 {
-      font-size: 2.4rem;
-      margin-bottom: 0.5rem;
-    } 
 
 
     /* FAQ */
@@ -354,7 +200,8 @@
     .faq-answer p {
         padding: 0 2rem 2rem;
         font-size: 1.1rem;
-        font-weight: 500;
+        font-weight: 300;
+        font-family: 'Inter', sans-serif;
         color: var(--ink);
     }
       
@@ -440,14 +287,6 @@
         >
       </a>
 
-      <div style="display:flex; align-items:center; gap:2rem;">
-        <div class="nav-links">
-        <a href="index.html/services" data-i18n="nav01">Services</a>
-        <a href="index.html/portfolio" data-i18n="nav02">Portfolio</a>
-        <a href="index.html/process" data-i18n="nav03">Process</a>
-        <a href="index.html/contact" data-i18n="nav04">Contact</a>
-        <a href="faq.html" data-i18n="nav05">FAQ</a>
-      </div>
 
         <select id="language-switcher" style="padding:0.7rem 1rem; border-radius:999px; border:1px solid rgba(0,0,0,0.08); background:var(--bone); font-family:'Inter', sans-serif; cursor:pointer;">
           <option value="en">EN</option>
