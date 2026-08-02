@@ -226,13 +226,13 @@
 
     .portfolio-card-back {
         transform: rotateY(180deg);
-        background: rgba(255,255,255,0.95);
+        background: var(--paper);
         backdrop-filter: blur(16px);
         padding: 2rem;
         display: flex;
         flex-direction: column;
         justify-content: center;
-        color: var(--obsidian);
+        color: var(--ink);
     }
     
     .portfolio-card-back h3 {
@@ -373,8 +373,6 @@
     <div class="container">
       <div class="section-header reveal">
         <h2 data-i18n="header_title">Scenography</h2>
-        <p data-i18n="header_text">
-          Let the scene become part of your story.
         </p>
       </div>
       
@@ -388,10 +386,7 @@
                 </div>
         
                 <div class="portfolio-card-back">
-                    <h3>.</h3>
-                    <p>
-                        .
-                    </p>
+                    <h3 data-i18n="card01_text">Wooden arch with floral decorations and crystal teardrops</h3>
                 </div>
             </div>
         </div>
@@ -403,10 +398,7 @@
                 </div>
         
                 <div class="portfolio-card-back">
-                    <h3>.</h3>
-                    <p>
-                        .
-                    </p>
+                    <h3 data-i18n="card02_text">Mirror used as a welcome sign</h3>
                 </div>
             </div>
         </div>
@@ -418,10 +410,7 @@
                 </div>
         
                 <div class="portfolio-card-back">
-                    <h3>.</h3>
-                    <p>
-                        .
-                    </p>
+                    <h3 data-i18n="card03_text">Custom neon sign</h3>
                 </div>
             </div>
         </div>
@@ -433,10 +422,7 @@
                 </div>
         
                 <div class="portfolio-card-back">
-                    <h3>.</h3>
-                    <p>
-                        .
-                    </p>
+                    <h3 data-i18n="card04_text">Giant flowers</h3>
                 </div>
             </div>
         </div>
@@ -448,10 +434,7 @@
                 </div>
         
                 <div class="portfolio-card-back">
-                    <h3>.</h3>
-                    <p>
-                        .
-                    </p>
+                    <h3 data-i18n="card05_text">Backdrop made from pages of old books</h3>
                 </div>
             </div>
         </div>
@@ -463,10 +446,7 @@
                 </div>
         
                 <div class="portfolio-card-back">
-                    <h3>.</h3>
-                    <p>
-                        .
-                    </p>
+                    <h3 data-i18n="card06_text">Stone-effect ceremonial arch</h3>
                 </div>
             </div>
         </div>
@@ -484,125 +464,34 @@
   <script>
     const translations = {
       en: {
-        nav01: 'Services',
-        nav02: 'Portfolio',
-        nav03: 'Process',
-        nav04: 'Contact',
-        hero_small: 'Immersive Celebration Design',
-        hero_title: 'Stories made tangible.',
-        hero_text: 'Studio Belvi creates emotionally-driven celebrations through handcrafted storytelling, spatial design, custom fabrication, and immersive personalized details.',
-        hero_cta: 'Start Your Story',
-        hero_secondary_cta: 'Explore Our Work',
-        services_span: 'Services',
-        services_title: 'Designed around your story.',
-        services_text: 'We create immersive and emotionally meaningful experiences through handcrafted details, spatial storytelling, and personalized design.',
-        services_card01_title: 'Story Objects',
-        services_card01_text: 'Invitation suites, keepsakes, personalized gifts, jewelry, and symbolic artifacts crafted to hold memory and meaning.',
-        services_card02_title: 'Spatial Narratives',
-        services_card02_text: 'Sculptural installations, ceremony environments, signage systems, and immersive visual details that transform spaces into experiences.',
-        services_card03_title: 'Interactive Moments',
-        services_card03_text: 'Personalized guest experiences, narrative elements, hidden symbolism, and interactive storytelling designed to create unforgettable memories.',
-        portfolio_span: 'Selected work',
-        portfolio_title: 'Immersive celebrations with soul.',
-        portfolio_text: 'Every detail is designed intentionally — from handcrafted objects to atmospheric installations and emotionally-driven guest experiences.',
-        portfolio01_title: 'Modern Mediterranean Ceremony',
-        portfolio01_text: 'Warm textures, sculptural arches, and intimate storytelling.',
-        portfolio01_cta: 'Explore Project',
-        process_span: 'Our Process',
-        process_title: 'Crafted with intention.',
-        process_card01_title: 'Discover',
-        process_card01_text: 'We learn your story, aesthetic, memories, and emotional vision.',
-        process_card02_title: 'Concept',
-        process_card02_text: 'We design immersive visual concepts and narrative-driven experiences.',
-        process_card03_title: 'Create',
-        process_card03_text: 'Through fabrication, design, lighting, and craftsmanship, ideas become tangible.',
-        process_card04_title: 'Experience',
-        process_card04_text: 'Your guests step into a celebration designed with emotion and meaning.',
-        contact_title: 'Let’s create something unforgettable.',
-        contact_text: 'Studio Belvi designs personalized celebrations through atmosphere, storytelling, and handcrafted artistry.',
-        contact_cta: 'Begin Your Project',
+        header_title: 'Scenography',
+        card01_text: 'Wooden arch with floral decorations and crystal teardrops',
+        card02_text: 'Mirror used as a welcome sign',
+        card03_text: 'Custom neon sign',
+        card04_text: 'Giant flowers',
+        card05_text: 'Backdrop made from pages of old books',
+        card06_text: 'Stone-effect ceremonial arch',
         footer_text: 'Studio Belvi — Crafted for meaningful moments.'
       },
       es: {
-        nav01: 'Servicios',
-        nav02: 'Porfolio',
-        nav03: 'Proceso',
-        nav04: 'Contacto',
-        hero_small: 'DISEÑO INMERSIVO DE CELEBRACIONES',
-        hero_title: 'Tu historia. Tu evento. Tu estudio creativo.',
-        hero_text: 'En <b>studio BELVI</b> somos especialistas en narrativa. Nuestro leitmotiv son las historias personales y queremos ayudarte a que cuentes la tuya en un solo día, posiblemente el día más importante de tu vida.',
-        hero_cta: 'Empieza tu aventura',
-        hero_secondary_cta: 'Conoce nuestro trabajo',
-        services_span: 'Servicios',
-        services_title: 'Tu personalidad como protagonista.',
-        services_text: 'Damos siempre máxima importancia al <b>carácter</b>, la <b>originalidad</b>, la <b>belleza</b> y la <b>emoción</b>.<br>Para unir estos elementos en una sola historia y convertirla en algo tangible, hemos diseñado tres paisajes sobre los que construiremos a tu gusto…',
-        services_card01_title: 'memorabilia',
-        services_card01_text: '<i>Corsages</i> y <i>boutoniers</i> personalizados, invitaciones que permanecen en el recuerdo, detalles exclusivos para tus invitados y toda clase de elementos simbólicos que quedarán para la posteridad.',
-        services_card02_title: 'escenografía',
-        services_card02_text: 'Ideación y fabricación de todo aquello que unifica los espacios en una sola temática y refleja tu verdadera esencia: arcos ceremoniales, <i>stands</i> creativos, decoración de mesas…',
-        services_card03_title: 'inmersión',
-        services_card03_text: 'Un último paisaje para que tus invitados se sumerjan contigo en la historia de tu vida: diseño de juegos, exhibiciones interactivas, bingos musicales, exposiciones audiovisuales…',
-        portfolio_span: 'VUESTRAS HISTORIAS',
-        portfolio_title: 'Cada una de vuestras historias alimenta el alma de Studio Belvi.',
-        portfolio_text: 'Aquí te dejamos un porfolio que crece con nosotros. Cada celebración nos hace mejor narradores y nos acerca más a ti, a tu historia y a tu visión del mundo.',
-        portfolio01_title: 'Cuento de hadas',
-        portfolio01_text: 'Espacios bucólicos, arcos de fantasía y una novia que parece sacada de un cuento',
-        portfolio01_cta: '',
-        process_span: 'NUESTRO PROCESO',
-        process_title: 'Narramos con intención',
-        process_card01_title: 'descubrimiento',
-        process_card01_text: 'Nos cuentas tu historia, tus gustos, tus recuerdos, lo que te emociona y lo que te enamora.',
-        process_card02_title: 'concepto',
-        process_card02_text: 'Ideamos el concepto narrativo y los tres paisajes que componen tu historia.',
-        process_card03_title: 'creación',
-        process_card03_text: 'Ponemos en práctica las ideas mediante diseño, fabricación y artesanía. Hacemos tangible lo intangible.',
-        process_card04_title: 'experiencia',
-        process_card04_text: 'Tú y tus invitados os sumergís en una historia llena de emoción y significado.',
-        contact_title: 'Inventemos juntos una fiesta inolvidable',
-        contact_text: 'Studio Belvi es el narrador, diseñador y artesano que tu evento merece.',
-        contact_cta: '¿Empezamos?',
-        footer_text: 'studio BELVI — Creamos momentos memorables'
+        header_title: 'Escenografía',
+        card01_text: 'Arco de madera con adornos florales y lágrimas de cristal',
+        card02_text: 'Espejo como cartel de bienvenida',
+        card03_text: 'Neón personalizado',
+        card04_text: 'Flores gigantes',
+        card05_text: 'Backdrop hecho con hojas de libros viejos',
+        card06_text: 'Arco ceremonial efecto piedra',
+        footer_text: 'Studio Belvi — Creamos momentos memorables'
       },
       ca: {
-        nav01: '',
-        nav02: '',
-        nav03: '',
-        nav04: '',
-        hero_small: 'Disseny Immersiu per a Celebracions',
-        hero_title: 'Històries fetes tangibles.',
-        hero_text: 'Studio Belvi crea celebracions emocionals mitjançant narrativa artesanal, disseny espacial, fabricació personalitzada i detalls immersius.',
-        hero_cta: 'Comença la Teva Història',
-        hero_secondary_cta: 'Explora el Nostre Treball',
-        services_span: 'Serveis',
-        services_title: '',
-        services_text: '',
-        services_card01_title: '',
-        services_card01_text: '',
-        services_card02_title: '',
-        services_card02_text: '',
-        services_card03_title: '',
-        services_card03_text: '',
-        portfolio_span: '',
-        portfolio_title: '',
-        portfolio_text: '',
-        portfolio01_title: '',
-        portfolio01_text: '',
-        portfolio01_cta: '',
-        portfolio_card02_text: '',
-        process_span: '',
-        process_title: '',
-        process_card01_title: '',
-        process_card01_text: '',
-        process_card02_title: '',
-        process_card02_text: '',
-        process_card03_title: '',
-        process_card03_text: '',
-        process_card04_title: '',
-        process_card04_text: '',
-        contact_title: '',
-        contact_text: '',
-        contact_cta: '',
-        footer_text: ''
+        header_title: 'Escenografia',
+        card01_text: 'Arc de fusta amb adorns florals i llàgrimes de vidre',
+        card02_text: 'Mirall com a cartell de benvinguda',
+        card03_text: 'Neó personalitzat',
+        card04_text: 'Flors gegants',
+        card05_text: 'Backdrop fet amb fulles de llibres vells',
+        card06_text: 'Arc cerimonial efecte pedra',
+        footer_text: 'Studio Belvi — Creem moments memorables'
       }
     };
 
