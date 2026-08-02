@@ -1,1 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Studio Belvi - Story Chapters</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link
+      rel="icon"
+      type="image/svg+xml"
+      href="assets/images/logo/favicon.svg"
+  >
+  
+  <style>
+    :root {
+      --paper: #f7f3ee;
+      --bone: #e9dfd2;
+      --ink: #1d1a18;
+      --espresso: #3a2f2a;
+      --bronze: #834C35;
+      --oxblood: #572430;
+      --taupe: #bba4a4;
+      --soft-shadow: 0 18px 50px rgba(45,30,25,0.12);
+    }
 
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--paper);
+      color: var(--ink);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: min(1200px, 92%);
+      margin: auto;
+    }
+
+    /* NAV */
+
+    nav {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      background: var(--oxblood);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+    }
+
+    .nav-wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.2rem 0;
+    }
+
+    .logo {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+    }
+    
+    .logo-image {
+        height: 60px;
+        width: auto;
+        transition:
+            transform 0.3s ease,
+            opacity 0.3s ease;
+    }
+    
+    .logo:hover .logo-image {
+        transform: scale(1.03);
+        opacity: 0.9;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--bone);
+    }
+
+    .nav-links a {
+      position: relative;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      width: 0%;
+      height: 1px;
+      background: var(--bone);
+      transition: 0.3s ease;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+
+    /* SECTIONS */
+
+    section {
+      padding: 7rem 0;
+    }
+
+    .section-header {
+      max-width: 760px;
+      margin-bottom: 4rem;
+    }
+
+    .section-header span {
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--espresso);
+      font-size: 0.8rem;
+    }
+
+    .section-header h2 {
+      font-size: clamp(2.8rem, 5vw, 4.8rem);
+      line-height: 1;
+      margin: 1rem 0;
+    }
+
+    .section-header p {
+      color: var(--ink);
+      font-size: 1.05rem;
+    }
+
+    /* INFO */
+
+    .info {
+      background: var(--bone);
+      border-radius: 40px;
+      padding: 4rem;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      gap: 2rem;
+    }
+
+    .info-grid h3 {
+      font-size: 1.8rem;
+      margin: 1rem 0;
+    }
+
+    .info-grid span {
+      font-size: 0.85rem;
+      color: var(--espresso);
+      letter-spacing: 0.12em;
+    }
+
+    /* FOOTER */
+
+    footer {
+      padding: 3rem 0;
+      text-align: center;
+      color: var(--espresso);
+    }
+
+    /* REVEAL ANIMATION */
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 1s ease;
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 980px) {
+      .services-grid,
+      .info-grid {
+        grid-template-columns: 1fr;
+      }
+
+
+      .nav-links {
+        display: none;
+      }
+
+      .info {
+        padding: 2rem;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .hero-text h1 {
+        font-size: 4rem;
+      }
+
+      .shape-3 {
+        width: 60%;
+      }
+
+      section {
+        padding: 5rem 0;
+      }
+    }
+
+    @media (max-width: 768px) {
+        .logo-image {
+            height: 42px;
+        }
+    }
+  </style>
+</head>
+
+  
+<body id="top">
+
+  <nav>
+    <div class="container nav-wrapper">
+      <a href="index.html" class="logo">
+        <img
+          src="assets/images/logo/logo-bone-textoderecha.svg"
+          alt="Studio Belvi"
+          class="logo-image"
+        >
+      </a>
+
+
+        <select id="language-switcher" style="padding:0.7rem 1rem; border-radius:999px; border:1px solid rgba(0,0,0,0.08); background:var(--bone); font-family:'Inter', sans-serif; cursor:pointer;">
+          <option value="en">EN</option>
+          <option value="es">ES</option>
+          <option value="ca">CA</option>
+        </select>
+      </div>
+    </div>
+  </nav>
+
+  <section id="process">
+    <div class="container">
+
+      <div class="info reveal">
+
+        <div class="section-header">
+          <h2 data-i18n="info_title">Story Chapters</h2>
+          <p data-i18n="info_text">With this collaboration option, we take it one step further.<br>You may have a very clear vision for your wedding theme and have already defined your aesthetic preferences, but you want to add a narrative layer that fits the image you’ve envisioned. You may have already chosen the menu, the flowers, the ceremony decor, the centerpieces…<br>If that’s the case, we’ll take care of weaving your personal and couple’s story into every stage of the wedding—whether through the services you suggest or ideas we come up with—so that your essence shines through in every corner on this special day.</p>
+        </div>
+
+        <div class="info-grid">
+            <h3 data-i18n="info_extra_title">How we do it</h3>
+            <p data-i18n="info_extra_text">If you’re sure that Story Chapters are right for you, write to us and tell us everything you’ve already planned and everything you have in mind. We’ll schedule a meeting to address any remaining questions, and if you’d like to move forward with the collaboration, we’ll send you a quote and a delivery date for the Creative Direction Proposal.<br>Once you’ve received that document and approved the proposals—whether in full or in part—we’ll conduct a cost analysis, agree on deadlines, and send you a quote for the entire collaboration. If it aligns with what you had in mind, our team will get to work designing and crafting all the elements that will add a touch of originality and beauty to your wedding.<br>But if you’d like to take it a step further and leave the entire wedding narrative in our hands—from start to finish—be sure to check out the Story Universe section.</p>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p data-i18n="footer_text">Studio Belvi — Crafted for meaningful moments.</p>
+    </div>
+  </footer>
+
+  <script>
+    const translations = {
+      en: {
+        info_title: 'Story Chapters',
+        info_text: 'With this collaboration option, we take it one step further.<br>You may have a very clear vision for your wedding theme and have already defined your aesthetic preferences, but you want to add a narrative layer that fits the image you’ve envisioned. You may have already chosen the menu, the flowers, the ceremony decor, the centerpieces…<br>If that’s the case, we’ll take care of weaving your personal and couple’s story into every stage of the wedding—whether through the services you suggest or ideas we come up with—so that your essence shines through in every corner on this special day.',
+        info_extra_title: 'How we do it',
+        info_extra_text: 'If you’re sure that Story Chapters are right for you, write to us and tell us everything you’ve already planned and everything you have in mind. We’ll schedule a meeting to address any remaining questions, and if you’d like to move forward with the collaboration, we’ll send you a quote and a delivery date for the Creative Direction Proposal.<br>Once you’ve received that document and approved the proposals—whether in full or in part—we’ll conduct a cost analysis, agree on deadlines, and send you a quote for the entire collaboration. If it aligns with what you had in mind, our team will get to work designing and crafting all the elements that will add a touch of originality and beauty to your wedding.<br>But if you’d like to take it a step further and leave the entire wedding narrative in our hands—from start to finish—be sure to check out the Story Universe section.',
+        footer_text: 'Studio Belvi — Crafted for meaningful moments.'
+      },
+      es: {
+        info_title: 'Story Chapters',
+        info_text: 'En esta opción de colaboración damos un pasito más.<br>Puede que tengas muy clara la temática de tu boda y ya hayas definido criterios estéticos pero quieras añadir una capa narrativa que se adecúe a esa imagen que tienes formada. Puede que ya tengas elegido el menú, las flores, el mobiliario de la ceremonia, los centros de mesa…<br>Si ese es tu caso, nosotros nos encargamos de incorporar tu historia personal y de pareja a todas las etapas de la boda, ya sea con los servicios que nos propongas o con las ideas que nazcan de nosotros, para que en este día tan especial se respire tu esencia por todos los rincones.',
+        info_extra_title: '¿Cómo lo hacemos?',
+        info_extra_text: 'Si tienes claro que los Story Chapters son para ti, escríbenos contando todo lo que tienes listo y todo lo que tienes en mente. Concertaremos una reunión para acabar de resolver dudas y, si quieres seguir adelante con la colaboración, te enviaremos un presupuesto y una fecha de entrega de la Propuesta de Dirección Creativa.<br>Una vez hayas recibido ese documento y apruebes las propuestas, sea total o parcialmente, realizaremos el estudio de costes, pactaremos los plazos y te enviaremos un presupuesto de la colaboración al completo. Si encaja con lo tenías en mente, nuestro equipo se pondrá manos a la obra con el diseño y la fabricación de todos esos elementos que darán a tu boda un plus de originalidad y belleza.<br>Pero si quieres dar un paso más y dejar toda la narrativa de la boda en nuestras manos, de principio a fin, no te pierdas la sección Story Universe.',
+        footer_text: 'Studio Belvi — Creamos momentos memorables'
+      },
+      ca: {
+        info_title: 'Story Chapters',
+        info_text: 'En aquesta opció de col·laboració fem un pas més.<br>Potser tens molt clara la temàtica del teu casament i ja has definit criteris estètics però vols afegir una capa narrativa que s’adeqüi a aquesta imatge que tens formada. Potser ja has triat el menú, les flors, el mobiliari de la cerimònia, els centres de taula…<br>Si aquest és el teu cas, nosaltres ens encarreguem d’incorporar la teva història personal i de parella a totes les etapes del casament, ja sigui amb els serveis que ens proposis o amb les idees que neixin de nosaltres, perquè en aquest dia tan especial es respiri la teva essència per tots els racons.',
+        info_extra_title: 'Com ho fem?',
+        info_extra_text: 'Si tens clar que els Story Chapters són per a tu, escriu-nos explicant tot el que tens llest i tot el que tens al cap. Concertarem una reunió per a acabar de resoldre dubtes i, si vols seguir endavant amb la col·laboració, t’enviarem un pressupost i una data de lliurament de la Proposta de Direcció Creativa.<br>Una vegada hagis rebut aquest document i aprovis les propostes, sigui totalment o parcialment, realitzarem l’estudi de costos, pactarem els terminis i t’enviarem un pressupost de la col·laboració al complet. Si encaixa amb el que tenies al cap, el nostre equip es posarà a treballar en el disseny i la fabricació de tots aquests elements que donaran al teu casament un plus d’originalitat i bellesa.<br>Però si vols fer un pas més i deixar tota la narrativa del casament a les nostres mans, de principi a fi, no et perdis la secció Story Universe.',
+        footer_text: 'Studio Belvi — Creem moments memorables'
+      }
+    };
+
+    const languageSwitcher = document.getElementById('language-switcher');
+
+    function updateLanguage(lang) {
+      document.querySelectorAll('[data-i18n]').forEach((element) => {
+        const key = element.getAttribute('data-i18n');
+        if (translations[lang] && translations[lang][key]) {
+          element.innerHTML = translations[lang][key];
+        }
+      });
+
+      localStorage.setItem('studioBelviLanguage', lang);
+    }
+
+    languageSwitcher.addEventListener('change', (e) => {
+      updateLanguage(e.target.value);
+    });
+
+    const savedLanguage = localStorage.getItem('studioBelviLanguage') || 'en';
+    languageSwitcher.value = savedLanguage;
+    updateLanguage(savedLanguage);
+
+    const reveals = document.querySelectorAll('.reveal');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+        }
+      });
+    }, {
+      threshold: 0.15
+    });
+
+    reveals.forEach((el) => observer.observe(el));
+  </script>
+
+</body>
+</html>
