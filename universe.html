@@ -1,1 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Studio Belvi - Story Universe</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link
+      rel="icon"
+      type="image/svg+xml"
+      href="assets/images/logo/favicon.svg"
+  >
+  
+  <style>
+    :root {
+      --paper: #f7f3ee;
+      --bone: #e9dfd2;
+      --ink: #1d1a18;
+      --espresso: #3a2f2a;
+      --bronze: #834C35;
+      --oxblood: #572430;
+      --taupe: #bba4a4;
+      --soft-shadow: 0 18px 50px rgba(45,30,25,0.12);
+    }
 
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--paper);
+      color: var(--ink);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: min(1200px, 92%);
+      margin: auto;
+    }
+
+    /* NAV */
+
+    nav {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      background: var(--oxblood);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+    }
+
+    .nav-wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.2rem 0;
+    }
+
+    .logo {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+    }
+    
+    .logo-image {
+        height: 60px;
+        width: auto;
+        transition:
+            transform 0.3s ease,
+            opacity 0.3s ease;
+    }
+    
+    .logo:hover .logo-image {
+        transform: scale(1.03);
+        opacity: 0.9;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--bone);
+    }
+
+    .nav-links a {
+      position: relative;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      width: 0%;
+      height: 1px;
+      background: var(--bone);
+      transition: 0.3s ease;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+
+    /* SECTIONS */
+
+    section {
+      padding: 7rem 0;
+    }
+
+    .section-header {
+      max-width: 760px;
+      margin-bottom: 4rem;
+    }
+
+    .section-header span {
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--espresso);
+      font-size: 0.8rem;
+    }
+
+    .section-header h2 {
+      font-size: clamp(2.8rem, 5vw, 4.8rem);
+      line-height: 1;
+      margin: 1rem 0;
+    }
+
+    .section-header p {
+      color: var(--ink);
+      font-size: 1.05rem;
+    }
+
+    /* INFO */
+
+    .info {
+      background: var(--bone);
+      border-radius: 40px;
+      padding: 4rem;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      gap: 2rem;
+    }
+
+    .info-grid h3 {
+      font-size: 1.8rem;
+      margin: 1rem 0;
+    }
+
+    .info-grid span {
+      font-size: 0.85rem;
+      color: var(--espresso);
+      letter-spacing: 0.12em;
+    }
+
+    /* FOOTER */
+
+    footer {
+      padding: 3rem 0;
+      text-align: center;
+      color: var(--espresso);
+    }
+
+    /* REVEAL ANIMATION */
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 1s ease;
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 980px) {
+      .services-grid,
+      .info-grid {
+        grid-template-columns: 1fr;
+      }
+
+
+      .nav-links {
+        display: none;
+      }
+
+      .info {
+        padding: 2rem;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .hero-text h1 {
+        font-size: 4rem;
+      }
+
+      .shape-3 {
+        width: 60%;
+      }
+
+      section {
+        padding: 5rem 0;
+      }
+    }
+
+    @media (max-width: 768px) {
+        .logo-image {
+            height: 42px;
+        }
+    }
+  </style>
+</head>
+
+  
+<body id="top">
+
+  <nav>
+    <div class="container nav-wrapper">
+      <a href="index.html" class="logo">
+        <img
+          src="assets/images/logo/logo-bone-textoderecha.svg"
+          alt="Studio Belvi"
+          class="logo-image"
+        >
+      </a>
+
+
+        <select id="language-switcher" style="padding:0.7rem 1rem; border-radius:999px; border:1px solid rgba(0,0,0,0.08); background:var(--bone); font-family:'Inter', sans-serif; cursor:pointer;">
+          <option value="en">EN</option>
+          <option value="es">ES</option>
+          <option value="ca">CA</option>
+        </select>
+      </div>
+    </div>
+  </nav>
+
+  <section id="process">
+    <div class="container">
+
+      <div class="info reveal">
+
+        <div class="section-header">
+          <h2 data-i18n="info_title">Story Universe</h2>
+          <p data-i18n="info_text">This is our most comprehensive collaboration option.<br>If you don’t know where to start or simply have so much on your mind that you’d rather we take care of everything, with Story Universe you don’t have to worry about a thing. We build the entire narrative surrounding your wedding from scratch. After all, that’s what we’re here to do. We’re deeply interested in your story and that of your partner, and we want to support you with our expertise.</p>
+        </div>
+
+        <div class="info-grid">
+            <h3 data-i18n="info_extra_title">How we do it</h3>
+            <p data-i18n="info_extra_text">The first step is for you to reach out to us via the contact page, briefly telling us what kind of wedding you’re planning and why you’d like us to craft the entire narrative.<br>From there, we’ll schedule a meeting—either online or in person—to get to know you a little better. The notes we take during the meeting will help us select the questions for a standardized form. We’ll send you the form, tailored to what we already know about you, and we’ll also include a quote for the Creative Direction Proposal.<br>Once you approve the aspects of the proposal that interest you, we’ll conduct a cost analysis, agree on deadlines, and send you a quote for the entire collaboration. All we’ll need is your approval and a deposit to get started building—from the ground up—the story your wedding deserves.</p>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p data-i18n="footer_text">Studio Belvi — Crafted for meaningful moments.</p>
+    </div>
+  </footer>
+
+  <script>
+    const translations = {
+      en: {
+        info_title: 'Story Universe',
+        info_text: 'This is our most comprehensive collaboration option.<br>If you don’t know where to start or simply have so much on your mind that you’d rather we take care of everything, with Story Universe you don’t have to worry about a thing. We build the entire narrative surrounding your wedding from scratch. After all, that’s what we’re here to do. We’re deeply interested in your story and that of your partner, and we want to support you with our expertise.',
+        info_extra_title: 'How we do it',
+        info_extra_text: 'The first step is for you to reach out to us via the contact page, briefly telling us what kind of wedding you’re planning and why you’d like us to craft the entire narrative.<br>From there, we’ll schedule a meeting—either online or in person—to get to know you a little better. The notes we take during the meeting will help us select the questions for a standardized form. We’ll send you the form, tailored to what we already know about you, and we’ll also include a quote for the Creative Direction Proposal.<br>Once you approve the aspects of the proposal that interest you, we’ll conduct a cost analysis, agree on deadlines, and send you a quote for the entire collaboration. All we’ll need is your approval and a deposit to get started building—from the ground up—the story your wedding deserves.',
+        footer_text: 'Studio Belvi — Crafted for meaningful moments.'
+      },
+      es: {
+        info_title: 'Story Universe',
+        info_text: 'Esta es la opción de colaboración más completa.<br>Si no sabes por dónde empezar o sencillamente tienes tantas cosas en la cabeza que prefieres que nos encarguemos de todo, con el Story Universe no tienes que preocuparte por nada. Nosotros construimos desde cero toda la narrativa que hay alrededor de tu boda. Al fin y al cabo, eso es lo que hemos venido a hacer. Nos interesa mucho tu historia y la de tu pareja y queremos apoyaros con nuestra experiencia.',
+        info_extra_title: '¿Cómo lo hacemos?',
+        info_extra_text: 'El primer paso es que nos escribas desde la página de contacto contándonos muy brevemente qué tipo de boda vas a celebrar y por qué te interesa que construyamos toda la narrativa.<br>A partir de ahí, concertaremos una reunión, ya sea telemática o presencialmente, para conoceros un poco mejor. Las notas que tomemos en la reunión nos servirán para seleccionar las preguntas de un formulario estandarizado. Te enviaremos el formulario teniendo en cuenta lo que ya sepamos de vosotros y adjuntaremos también un presupuesto para la Propuesta de Dirección Creativa.<br>Una vez apruebes los aspectos de la propuesta que te interesen, haremos un estudio de costes, pactaremos plazos y te enviaremos un presupuesto de la colaboración al completo. Solo necesitaremos tu OK y el pago de una reserva para que nos pongamos a construir desde cero la historia que tu boda merece.',
+        footer_text: 'Studio Belvi — Creamos momentos memorables'
+      },
+      ca: {
+        info_title: 'Story Universe',
+        info_text: 'Aquesta és l’opció de col·laboració més completa.<br>Si no saps per on començar o senzillament tens tantes coses al cap que prefereixes que ens encarreguem de tot, amb l’Story Universe no has de preocupar-te per res. Nosaltres construïm des de zero tota la narrativa que hi ha al voltant del teu casament. Al cap i a la fi, això és el que hem vingut a fer. Ens interessa molt la teva història i la de la teva parella i volem donar-vos suport amb la nostra experiència.',
+        info_extra_title: 'Com ho fem?',
+        info_extra_text: 'El primer pas és que ens escriguis des de la pàgina de contacte explicant-nos molt breument quin tipus de casament celebraràs i per què t’interessa que construïm tota la narrativa.<br>A partir d’aquí, concertarem una reunió, ja sigui telemàtica o presencialment, per a conèixer-vos una mica millor. Les notes que prenguem a la reunió ens serviran per a seleccionar les preguntes d’un formulari estandarditzat. T’enviarem el formulari tenint en compte el que ja sapiguem de vosaltres i adjuntarem també un pressupost per a la Proposta de Direcció Creativa.<br>Una vegada aprovis els aspectes de la proposta que t’interessin, farem un estudi de costos, pactarem terminis i t’enviarem un pressupost de la col·laboració al complet. Només necessitarem el teu OK i el pagament d’una reserva perquè ens posem a construir des de zero la història que el teu casament mereix.',
+        footer_text: 'Studio Belvi — Creem moments memorables'
+      }
+    };
+
+    const languageSwitcher = document.getElementById('language-switcher');
+
+    function updateLanguage(lang) {
+      document.querySelectorAll('[data-i18n]').forEach((element) => {
+        const key = element.getAttribute('data-i18n');
+        if (translations[lang] && translations[lang][key]) {
+          element.innerHTML = translations[lang][key];
+        }
+      });
+
+      localStorage.setItem('studioBelviLanguage', lang);
+    }
+
+    languageSwitcher.addEventListener('change', (e) => {
+      updateLanguage(e.target.value);
+    });
+
+    const savedLanguage = localStorage.getItem('studioBelviLanguage') || 'en';
+    languageSwitcher.value = savedLanguage;
+    updateLanguage(savedLanguage);
+
+    const reveals = document.querySelectorAll('.reveal');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+        }
+      });
+    }, {
+      threshold: 0.15
+    });
+
+    reveals.forEach((el) => observer.observe(el));
+  </script>
+
+</body>
+</html>
