@@ -531,12 +531,23 @@
     }
 
     /* RESPONSIVE */
-
+    
+    @media (max-width:1200px){
+        .services-grid,
+        .collab-grid{
+            grid-template-columns:repeat(2,1fr);
+        }
+    
+        .process-grid{
+            grid-template-columns:repeat(2,1fr);
+        }
+    }
+    
     @media (max-width: 980px) {
       .hero-grid,
       .services-grid,
       .portfolio-grid,
-      .process-grid 
+      .process-grid,
       .collab-grid {
         grid-template-columns: 1fr;
       }
@@ -546,7 +557,7 @@
       }
 
       .hero-visual {
-        height: 500px;
+        height:clamp(350px,60vw,680px);
       }
 
       .nav-links {
@@ -560,13 +571,16 @@
 
     @media (max-width: 640px) {
       .hero-text h1 {
-        font-size: 4rem;
+          font-size:clamp(2.8rem,12vw,6rem);
       }
-
-      .shape-3 {
-        width: 60%;
+      
+      .section-header h2{
+          font-size:clamp(2rem,8vw,4rem);
       }
-
+      
+      .cta h2{
+          font-size:clamp(2.2rem,9vw,5rem);
+      }
       section {
         padding: 5rem 0;
       }
@@ -575,6 +589,18 @@
     @media (max-width: 768px) {
         .logo-image {
             height: 42px;
+        }
+        section{
+            padding:4rem 0;
+        }
+    
+        .process{
+            padding:2rem 1.5rem;
+        }
+    
+        .service-card,
+        .collab-card{
+            padding:2rem;
         }
     }
   </style>
